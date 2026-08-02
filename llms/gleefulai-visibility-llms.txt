@@ -1,0 +1,53 @@
+# Visibility (gleefulai)
+
+> Audit how visible and understandable a website is to AI assistants and agents.
+
+## Product
+- Name: Visibility
+- Domain: visibility.gleefulai.com
+- Parent: gleefulai.com
+
+## API (x402 micropayments, no API key)
+- POST /api/probe/fetch — $0.01 — URL status / headers probe
+- POST /api/meta/extract — $0.02 — title / meta / OG / JSON-LD types
+- POST /api/audit/score — $0.06 — fast score + top issues
+- POST /api/audit/full — $0.15 — full audit with categories and recommendations
+- POST /api/audit/deep — $0.35 — multi-page deep audit
+- POST /api/bots/audit — $0.12 — AI crawler / bot access audit
+- POST /api/llms/generate — $0.25 — generate /llms.txt
+- POST /api/cite/check — $0.20 — simulated prompt citation / mention check
+- POST /api/schema/generate — $0.40 — JSON-LD schema pack
+- POST /api/cite/sources — $0.30 — simulated citation source gap
+- POST /api/content/answerability — $0.12 — answerability score
+- POST /api/fixes/generate — $0.55 — copy-paste fixes (DeepSeek)
+- POST /api/compare/suggest — $0.08 — competitor suggestions
+- POST /api/compare/gap — $0.50 — competitor gap analysis
+
+## Payment
+- Unpaid POST → 402 with x402 PAYMENT-REQUIRED (USDC on Base)
+- GET on any paid path returns help + sample shapes (no charge)
+- POST /api/preview/audit and POST /api/preview/compare — free teasers
+
+## Discovery
+- /.well-known/x402
+- /.well-known/agent.json
+- /openapi.json
+- /api/openapi
+- /api/catalog
+- /api/pricing
+- /api/status
+- /api/capabilities
+- /api/health
+- /llms.txt
+- /robots.txt
+- /sitemap.xml
+- GET /api/examples/audit/score (and other endpoint paths)
+
+## Humans
+- /docs /examples /pricing /status /about /audit /compare /changelog
+
+## FAQ
+- What is Visibility? — AI visibility / AEO audit API for assistants and agents.
+- How do I pay? — x402 USDC on Base after HTTP 402; no API keys.
+- Where do agents discover endpoints? — /.well-known/x402, /openapi.json, /api/catalog, /llms.txt.
+- Are cite tools live engines? — No; /api/cite/* are LLM-simulated.

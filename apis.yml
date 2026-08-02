@@ -1,0 +1,86 @@
+name: Visibility (GleefulAI)
+description: >-
+  Visibility is an AI-visibility and answer-engine-optimization audit API from GleefulAI. It scores
+  how visible and understandable a website is to AI assistants and agents, then generates the
+  artifacts to improve it — audit scoring at three depths, fix generation, competitor gap and
+  suggestion comparison, bot-access auditing, citation checking, and generation of `llms.txt` and
+  schema markup. The unusual part is payment: there are no API keys at all. Access is metered per
+  call through x402 micropayments in USDC on Base, so a caller pays per request rather than
+  registering. That makes it callable by an agent with a wallet and no signup flow.
+url: https://gleefulai-visibility.apievangelist.com/apis.yml
+created: '2026-08-02'
+modified: '2026-08-02'
+specificationVersion: '0.21'
+tags:
+  - AI Visibility
+  - Answer Engine Optimization
+  - AEO
+  - Website Audit
+  - Agent-native
+  - x402
+  - Micropayments
+  - llms.txt
+  - Developer Tools
+apis:
+  - name: Visibility AI Audit API
+    description: >-
+      Audits how visible a website is to AI assistants and agents. 36 operations across 22 paths —
+      every path answers both GET and POST — covering audit scoring at score/full/deep depths, fix
+      generation, competitor comparison and gap analysis, bot-access auditing, citation checking,
+      and generation of llms.txt and schema markup. OpenAPI 3.1.0. No API keys: access is paid per
+      call via x402 micropayments in USDC on Base.
+    humanURL: https://visibility.gleefulai.com/docs
+    baseURL: https://visibility.gleefulai.com
+    tags:
+      - AI Visibility
+      - Answer Engine Optimization
+      - Website Audit
+      - x402
+      - Agent-native
+    properties:
+      - type: OpenAPI
+        url: openapi/gleefulai-visibility-openapi.json
+      - type: OpenAPI
+        url: https://visibility.gleefulai.com/openapi.json
+      - type: Documentation
+        url: https://visibility.gleefulai.com/docs
+common:
+  - type: Website
+    url: https://visibility.gleefulai.com
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+  - type: LLMSTxt
+    url: llms/gleefulai-visibility-llms.txt
+  - type: LLMSTxt
+    url: https://visibility.gleefulai.com/llms.txt
+  - type: Company
+    url: https://gleefulai.com
+maintainers:
+  - FN: GleefulAI
+    url: https://gleefulai.com
+x-evidence:
+  harvested: '2026-08-02'
+  request: apisio/apis.io#45
+  probes:
+    - https://visibility.gleefulai.com/openapi.json -> HTTP 200, OpenAPI 3.1.0, 22 paths / 36 ops
+    - https://visibility.gleefulai.com/llms.txt -> HTTP 200, 2,072 bytes, text/plain
+    - https://visibility.gleefulai.com/docs -> HTTP 200
+    - https://visibility.gleefulai.com/nonexistent-xyz789 -> HTTP 404 (no catch-all; the 200s are real)
+    - https://visibility.gleefulai.com/.well-known/api-catalog -> HTTP 404
+    - https://visibility.gleefulai.com/apis.json -> HTTP 404
+  defects_found:
+    no_schemas: >-
+      36 operations and zero `components.schemas`. Request and response bodies are undescribed,
+      which is the largest gap in the contract.
+    version_reads_prerelease: >-
+      `info.version` is 0.1.0 on a document declaring OpenAPI 3.1.0. Anything parsing the API's own
+      version reads it as pre-release.
+  not_asserted:
+    pricing: >-
+      Access is x402 micropayments in USDC on Base, per the spec description and the submission.
+      No machine-readable rate card or per-call price list was found, so plans and rate limits are
+      not asserted.
+  note: >-
+    Submitted by mohammed-mlh on the legacy apisio/apis.io repo, which is a deprecated channel that
+    people still find. Slug carries the parent company because "visibility" alone is far too
+    generic for a catalog namespace keyed on provider.
