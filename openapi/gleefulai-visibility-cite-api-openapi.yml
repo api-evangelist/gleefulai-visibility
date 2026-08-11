@@ -1,0 +1,90 @@
+openapi: 3.2.0
+info:
+  title: Visibility AI Audit Cite API
+  version: 0.1.0
+  description: AI visibility / AEO audit API with x402 micropayments. No API key required.
+servers:
+- url: https://visibility.gleefulai.com
+tags:
+- name: Cite
+paths:
+  /api/cite/check:
+    get:
+      summary: Help for /api/cite/check
+      operationId: _api_cite_check_help
+      responses:
+        '200':
+          description: Endpoint help, sample request/response
+      tags:
+      - Cite
+    post:
+      summary: Simulated brand mention/citation check across 1–5 buyer prompts (LLM, not live engines)
+      operationId: _api_cite_check
+      x-price: $0.20
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - url
+              - prompts
+              properties:
+                url:
+                  type: string
+                brand:
+                  type: string
+                prompts:
+                  type: array
+                  items:
+                    type: string
+                  minItems: 1
+                  maxItems: 5
+      responses:
+        '200':
+          description: Success with data + signed receipt
+        '402':
+          description: Payment required (x402 challenge)
+      tags:
+      - Cite
+  /api/cite/sources:
+    get:
+      summary: Help for /api/cite/sources
+      operationId: _api_cite_sources_help
+      responses:
+        '200':
+          description: Endpoint help, sample request/response
+      tags:
+      - Cite
+    post:
+      summary: Simulated citation source gap — which third-party domains get cited instead of you
+      operationId: _api_cite_sources
+      x-price: $0.30
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - url
+              - prompts
+              properties:
+                url:
+                  type: string
+                brand:
+                  type: string
+                prompts:
+                  type: array
+                  items:
+                    type: string
+                  minItems: 1
+                  maxItems: 5
+      responses:
+        '200':
+          description: Success with data + signed receipt
+        '402':
+          description: Payment required (x402 challenge)
+      tags:
+      - Cite

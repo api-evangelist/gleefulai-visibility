@@ -1,0 +1,46 @@
+openapi: 3.2.0
+info:
+  title: Visibility AI Audit Fixes API
+  version: 0.1.0
+  description: AI visibility / AEO audit API with x402 micropayments. No API key required.
+servers:
+- url: https://visibility.gleefulai.com
+tags:
+- name: Fixes
+paths:
+  /api/fixes/generate:
+    get:
+      summary: Help for /api/fixes/generate
+      operationId: _api_fixes_generate_help
+      responses:
+        '200':
+          description: Endpoint help, sample request/response
+      tags:
+      - Fixes
+    post:
+      summary: Generate copy-paste fixes for AI visibility issues
+      operationId: _api_fixes_generate
+      x-price: $0.55
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - url
+              properties:
+                url:
+                  type: string
+                issues:
+                  type: array
+                  items:
+                    type: string
+                  maxItems: 6
+      responses:
+        '200':
+          description: Success with data + signed receipt
+        '402':
+          description: Payment required (x402 challenge)
+      tags:
+      - Fixes

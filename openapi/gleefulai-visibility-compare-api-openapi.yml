@@ -1,0 +1,88 @@
+openapi: 3.2.0
+info:
+  title: Visibility AI Audit Compare API
+  version: 0.1.0
+  description: AI visibility / AEO audit API with x402 micropayments. No API key required.
+servers:
+- url: https://visibility.gleefulai.com
+tags:
+- name: Compare
+paths:
+  /api/compare/suggest:
+    get:
+      summary: Help for /api/compare/suggest
+      operationId: _api_compare_suggest_help
+      responses:
+        '200':
+          description: Endpoint help, sample request/response
+      tags:
+      - Compare
+    post:
+      summary: Suggest competitor domains for gap analysis
+      operationId: _api_compare_suggest
+      x-price: $0.08
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - url
+              properties:
+                url:
+                  type: string
+                limit:
+                  type: integer
+                  minimum: 1
+                  maximum: 8
+                market:
+                  type: string
+      responses:
+        '200':
+          description: Success with data + signed receipt
+        '402':
+          description: Payment required (x402 challenge)
+      tags:
+      - Compare
+  /api/compare/gap:
+    get:
+      summary: Help for /api/compare/gap
+      operationId: _api_compare_gap_help
+      responses:
+        '200':
+          description: Endpoint help, sample request/response
+      tags:
+      - Compare
+    post:
+      summary: Competitor AI visibility gap analysis
+      operationId: _api_compare_gap
+      x-price: $0.50
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - targetUrl
+              - competitors
+              properties:
+                targetUrl:
+                  type: string
+                competitors:
+                  type: array
+                  items:
+                    type: string
+                  maxItems: 3
+                focus:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Success with data + signed receipt
+        '402':
+          description: Payment required (x402 challenge)
+      tags:
+      - Compare

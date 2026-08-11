@@ -1,0 +1,18 @@
+openapi: 3.2.0
+info:
+  title: Visibility AI Audit Capabilities API
+  version: 0.1.0
+  description: AI visibility / AEO audit API with x402 micropayments. No API key required.
+servers:
+- url: https://visibility.gleefulai.com
+tags:
+- name: Capabilities
+paths:
+  /api/capabilities:
+    get:
+      summary: Machine-readable capabilities
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Capabilities

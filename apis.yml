@@ -22,28 +22,210 @@ tags:
   - llms.txt
   - Developer Tools
 apis:
-  - name: Visibility AI Audit API
-    description: >-
-      Audits how visible a website is to AI assistants and agents. 36 operations across 22 paths —
-      every path answers both GET and POST — covering audit scoring at score/full/deep depths, fix
-      generation, competitor comparison and gap analysis, bot-access auditing, citation checking,
-      and generation of llms.txt and schema markup. OpenAPI 3.1.0. No API keys: access is paid per
-      call via x402 micropayments in USDC on Base.
-    humanURL: https://visibility.gleefulai.com/docs
-    baseURL: https://visibility.gleefulai.com
-    tags:
-      - AI Visibility
-      - Answer Engine Optimization
-      - Website Audit
-      - x402
-      - Agent-native
-    properties:
-      - type: OpenAPI
-        url: openapi/gleefulai-visibility-openapi.json
-      - type: OpenAPI
-        url: https://visibility.gleefulai.com/openapi.json
-      - type: Documentation
-        url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-audit-api
+  name: Visibility (GleefulAI) Audit API
+  description: The Audit API from Visibility (GleefulAI) — 3 operation(s) for audit.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Audit
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-audit-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-bots-api
+  name: Visibility (GleefulAI) Bots API
+  description: The Bots API from Visibility (GleefulAI) — 1 operation(s) for bots.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Bots
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-bots-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-capabilities-api
+  name: Visibility (GleefulAI) Capabilities API
+  description: The Capabilities API from Visibility (GleefulAI) — 1 operation(s) for capabilities.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Capabilities
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-capabilities-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-catalog-api
+  name: Visibility (GleefulAI) Catalog API
+  description: The Catalog API from Visibility (GleefulAI) — 1 operation(s) for catalog.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-catalog-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-cite-api
+  name: Visibility (GleefulAI) Cite API
+  description: The Cite API from Visibility (GleefulAI) — 2 operation(s) for cite.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Cite
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-cite-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-compare-api
+  name: Visibility (GleefulAI) Compare API
+  description: The Compare API from Visibility (GleefulAI) — 2 operation(s) for compare.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Compare
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-compare-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-content-api
+  name: Visibility (GleefulAI) Content API
+  description: The Content API from Visibility (GleefulAI) — 1 operation(s) for content.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-content-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-examples-api
+  name: Visibility (GleefulAI) Examples API
+  description: The Examples API from Visibility (GleefulAI) — 1 operation(s) for examples.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Examples
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-examples-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-fixes-api
+  name: Visibility (GleefulAI) Fixes API
+  description: The Fixes API from Visibility (GleefulAI) — 1 operation(s) for fixes.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Fixes
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-fixes-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-health-api
+  name: Visibility (GleefulAI) Health API
+  description: The Health API from Visibility (GleefulAI) — 1 operation(s) for health.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-health-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-llms-api
+  name: Visibility (GleefulAI) Llms API
+  description: The Llms API from Visibility (GleefulAI) — 1 operation(s) for llms.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Llms
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-llms-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-meta-api
+  name: Visibility (GleefulAI) Meta API
+  description: The Meta API from Visibility (GleefulAI) — 1 operation(s) for meta.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Meta
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-meta-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-preview-api
+  name: Visibility (GleefulAI) Preview API
+  description: The Preview API from Visibility (GleefulAI) — 2 operation(s) for preview.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Preview
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-preview-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-pricing-api
+  name: Visibility (GleefulAI) Pricing API
+  description: The Pricing API from Visibility (GleefulAI) — 1 operation(s) for pricing.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Pricing
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-pricing-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-probe-api
+  name: Visibility (GleefulAI) Probe API
+  description: The Probe API from Visibility (GleefulAI) — 1 operation(s) for probe.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Probe
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-probe-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-schema-api
+  name: Visibility (GleefulAI) Schema API
+  description: The Schema API from Visibility (GleefulAI) — 1 operation(s) for schema.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Schema
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-schema-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
+- aid: gleefulai-visibility:gleefulai-visibility-status-api
+  name: Visibility (GleefulAI) Status API
+  description: The Status API from Visibility (GleefulAI) — 1 operation(s) for status.
+  humanURL: https://visibility.gleefulai.com/docs
+  baseURL: https://visibility.gleefulai.com
+  tags:
+  - Status
+  properties:
+  - type: OpenAPI
+    url: openapi/gleefulai-visibility-status-api-openapi.yml
+  - type: Documentation
+    url: https://visibility.gleefulai.com/docs
 common:
   - type: Website
     url: https://visibility.gleefulai.com

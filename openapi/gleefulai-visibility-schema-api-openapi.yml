@@ -1,0 +1,42 @@
+openapi: 3.2.0
+info:
+  title: Visibility AI Audit Schema API
+  version: 0.1.0
+  description: AI visibility / AEO audit API with x402 micropayments. No API key required.
+servers:
+- url: https://visibility.gleefulai.com
+tags:
+- name: Schema
+paths:
+  /api/schema/generate:
+    get:
+      summary: Help for /api/schema/generate
+      operationId: _api_schema_generate_help
+      responses:
+        '200':
+          description: Endpoint help, sample request/response
+      tags:
+      - Schema
+    post:
+      summary: Generate Organization / WebSite / SoftwareApplication / FAQPage JSON-LD pack
+      operationId: _api_schema_generate
+      x-price: $0.40
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - url
+              properties:
+                url:
+                  type: string
+                  description: URL or domain to audit
+      responses:
+        '200':
+          description: Success with data + signed receipt
+        '402':
+          description: Payment required (x402 challenge)
+      tags:
+      - Schema

@@ -1,0 +1,18 @@
+openapi: 3.2.0
+info:
+  title: Visibility AI Audit Health API
+  version: 0.1.0
+  description: AI visibility / AEO audit API with x402 micropayments. No API key required.
+servers:
+- url: https://visibility.gleefulai.com
+tags:
+- name: Health
+paths:
+  /api/health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Health
